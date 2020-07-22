@@ -1,0 +1,101 @@
+// https://playcode.io
+
+// 1. Code runs as you type: edit message
+
+let lista = []
+let msg = lista
+let primeiro = -1
+let topo = -1
+let msg2
+inserir(4)
+inserir(3)
+inserir(7)
+inserir(9)
+inserir(5)
+
+remover()
+remover()
+remover()
+remover()
+remover()
+
+inserir(2)
+inserir(3)
+inserir(6)
+inserir(7)
+inserir(9)
+inserir(5)
+remover()
+inserir(2)
+inserir(4)
+checkVoid()
+
+function checkVoid(){
+
+ if(topo == 0 || topo == -1){
+   msg2 = "true"
+ }else{
+   msg2 = "false"
+ }
+}
+
+function inserir(numero){
+  
+  if(lista.length == 0){
+
+      lista.push(numero)
+      primeiro = lista.length -1
+      topo = lista.length -1
+      lista.push(-1)
+      
+  }else{
+       
+       if(topo == lista.length-2){
+
+           lista.push(numero)
+           topo = lista.length -1
+           lista[lista.length-2] = lista.length -1 
+           lista.push(-1)
+       }else{
+            topo = topo + 2
+            lista[topo]= numero
+            lista[topo - 1] = topo 
+            lista[topo + 1] = -1
+       }
+       
+
+  }
+  
+  
+ 
+}
+//Preservar os espaços disponiveis
+//Remoção tipo pilha
+function remover(numero){
+  lista[topo] = 0
+  lista[topo + 1] = 0
+  lista[topo -1] = -1
+  topo = topo - 2
+}
+
+//Remoção tipo fila
+function primeiroSai(){
+  
+
+}
+
+
+
+
+
+// 2. Files import automatically: uncomment this
+//msg = capitalize(msg)
+
+$('#header')
+  .html(msg)
+  // 3. Smart autocomplete: type .fadeIn('slow')
+  // after .fadeOut('slow')
+  //.fadeOut(1000)
+  
+console.log({ myMessage: msg })
+console.log({ myMessage: msg2 })
