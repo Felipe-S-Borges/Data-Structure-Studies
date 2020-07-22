@@ -3,4 +3,6 @@ First Goal - Create a linked list using Js to operate in a pile data estructure 
 to dasplay the operations. XD
 Remember!-> Linked list isn't array.
 
-Second Goal - Create a Linked-list using objects and set some operations insert, delete and check if the list is empity.
+Second Goal - Create a Linked-list using objects and set some operations like insert, delete and check if the list is empity.
+
+Third Goal - ...
