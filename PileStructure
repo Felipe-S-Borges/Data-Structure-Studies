@@ -4,7 +4,7 @@
 
 let lista = []
 let msg = lista
-let primeiro = -1
+let primeiro = 0
 let topo = -1
 let msg2
 inserir(4)
@@ -29,7 +29,17 @@ remover()
 inserir(2)
 inserir(4)
 checkVoid()
-
+primeiroSai()
+inserir(3)
+remover()
+remover()
+primeiroSai()
+primeiroSai()
+inserir(5)
+inserir(9)
+inserir(3)
+inserir(9)
+inserir(7)
 function checkVoid(){
 
  if(topo == 0 || topo == -1){
@@ -50,17 +60,26 @@ function inserir(numero){
       
   }else{
        
-       if(topo == lista.length-2){
+       if(topo == lista.length-2 && primeiro == 0){
 
            lista.push(numero)
            topo = lista.length -1
            lista[lista.length-2] = lista.length -1 
            lista.push(-1)
        }else{
-            topo = topo + 2
-            lista[topo]= numero
-            lista[topo - 1] = topo 
-            lista[topo + 1] = -1
+            if(primeiro > 0){
+              lista[primeiro - 2] = numero
+              lista[primeiro -1] = primeiro
+              primeiro = primeiro - 2
+            }else{
+
+              topo = topo + 2
+              lista[topo]= numero
+              lista[topo - 1] = topo 
+              lista[topo + 1] = -1
+
+            }
+            
        }
        
 
@@ -80,8 +99,9 @@ function remover(numero){
 
 //Remoção tipo fila
 function primeiroSai(){
-  
-
+  lista[primeiro] = 0
+  lista[primeiro + 1] = 0
+  primeiro = primeiro + 2
 }
 
 
