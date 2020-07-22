@@ -5,4 +5,4 @@ Remember!-> Linked list isn't array.
 
 Second Goal - Create a Linked-list using objects and set some operations like insert, delete and check if the list is empity.
 
-Third Goal - ...
+Third Goal - Create a double-linked-list using objects and set some operations like insert, delete and check if the list is empity.
