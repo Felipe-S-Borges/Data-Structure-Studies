@@ -1,0 +1,58 @@
+// 1. Code runs as you type: edit message
+let msg = 'hello world'
+// 2. Files import automatically: uncomment this
+//msg = capitalize(msg)
+class Node{
+   
+   constructor(valor){
+      this.valor = valor
+      this.next = null
+   }
+
+}
+
+class LinkedList{
+
+   constructor(){
+     this.head = null
+     this.length = 0
+
+   }
+
+   //inserir elemento
+   inserir(elemento){
+    var node = new Node(elemento)
+    var atual
+    //primeiro item da lista
+    if(this.head == null){
+       
+       this.head = node
+
+    }else{
+
+        atual = this.head
+        while(atual.next){
+          atual = atual.next
+        }
+        atual.next = node
+    }
+    this.length++
+   }
+
+}
+
+let lista = new LinkedList()
+console.log(lista)
+lista.inserir(3)
+console.log(lista)
+lista.inserir(2)
+lista.inserir(5)
+lista.inserir(8)
+console.log(lista)
+
+  .html(msg)
+  // 3. Smart autocomplete: type .fadeIn('slow')
+  // after .fadeOut('slow')
+  //.fadeOut(1000)
+  
+//console.log({ myMessage: msg })
