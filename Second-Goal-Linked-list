@@ -37,6 +37,44 @@ class LinkedList{
         atual.next = node
     }
     this.length++
+
+
+   }
+
+   removerDo(indice){
+     
+     if(indice > 0 && indice > this.length){
+
+       return -1
+
+     }else{
+
+       var curr
+       var previa
+       var it = 0
+
+       curr = this.head
+       previa = curr
+
+       if( indice === 0 ){
+         this.head = curr.next
+       }else{
+         while(it < indice){
+             it++
+             previa = curr
+             curr = curr.next
+         }
+         previa.next = curr.next
+       }
+       this.length--
+
+       return curr.valor
+
+
+     }
+
+
+
    }
 
 }
@@ -50,6 +88,9 @@ lista.inserir(5)
 lista.inserir(8)
 console.log(lista)
 
+
+console.log(lista.removerDo(0))
+console.log(lista)
   .html(msg)
   // 3. Smart autocomplete: type .fadeIn('slow')
   // after .fadeOut('slow')
