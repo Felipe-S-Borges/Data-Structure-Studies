@@ -97,7 +97,9 @@ class LinkedList{
       return -1
 
   }
-
+  isEmpity(){
+     return this.length == 0? true : false
+  }
 }
 
 let lista = new LinkedList()
@@ -115,7 +117,13 @@ console.log(lista)
 lista.removerElemento(0)
 console.log(lista.removerElemento(0))
 console.log(lista)
-  .html(msg)
+console.log(lista.isEmpity())
+lista.removerElemento(8)
+lista.removerElemento(5)
+lista.removerElemento(2)
+console.log(lista.isEmpity())
+
+ // .html(msg)
   // 3. Smart autocomplete: type .fadeIn('slow')
   // after .fadeOut('slow')
   //.fadeOut(1000)
