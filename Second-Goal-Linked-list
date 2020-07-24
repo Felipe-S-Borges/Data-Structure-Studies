@@ -69,13 +69,34 @@ class LinkedList{
        this.length--
 
        return curr.valor
-
-
      }
+  }
 
+  removerElemento(elemento){
 
+      var atual = this.head
+      var previa = null
 
-   }
+      while(atual != null){
+
+          if(atual.valor === elemento){
+              //Se é o primeiro elemento da lista
+              if(previa == null){
+                  this.head = atual.next
+              }else{
+                  previa.next = atual.next
+              }
+              this.length--
+              return atual.valor
+          }
+          previa = atual
+          atual = atual.next
+
+      }
+      // the element is not in the list
+      return -1
+
+  }
 
 }
 
@@ -90,6 +111,9 @@ console.log(lista)
 
 
 console.log(lista.removerDo(0))
+console.log(lista)
+lista.removerElemento(0)
+console.log(lista.removerElemento(0))
 console.log(lista)
   .html(msg)
   // 3. Smart autocomplete: type .fadeIn('slow')
